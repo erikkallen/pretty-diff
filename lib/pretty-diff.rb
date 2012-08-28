@@ -91,7 +91,7 @@ module PrettyDiff
           line = "<#{tag}>#{line.gsub(/\s/,'&nbsp;')}</#{tag}>"
         end
         if @options[:fake_tab]
-          line = link.gsub(/\t/, '&nbsp;' * @options[:fake_tab])
+          line = line.gsub(/\t/, '&nbsp;' * @options[:fake_tab])
         end
         if @options[:as_list_items]
           line = "<li#{ " class=\"#{tag}\"" if tag }>#{line}</li>"
