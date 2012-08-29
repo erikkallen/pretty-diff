@@ -79,9 +79,6 @@ module PrettyDiff
             next
           end
         end
-        if line !~ /\A[\+|-]{3}\s/ && line =~ /\A(\+|-)/
-          line = line.gsub(/\A./, '') if @options[:remove_signs]
-        end
       end.join("\n")
       
       return lines
