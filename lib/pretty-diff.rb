@@ -69,19 +69,7 @@ module PrettyDiff
 
     # simply returns lines
     def to_s
-       lines = @lines.each_line.map do |line|
-        line.chomp!
-        unless @options[:no_newline_warning]
-          next if line == '\ No newline at end of file'
-        end
-        if @options[:remove_leading_file_lines]
-          if line =~ /\A[\+|-]{3}/
-            next
-          end
-        end
-      end.join("\n")
-      
-      return lines
+      @lines
     end
 
     # removes +'s and -'s and wraps the changed lines in either
